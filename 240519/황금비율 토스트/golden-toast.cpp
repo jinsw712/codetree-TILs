@@ -52,6 +52,8 @@ int main() {
         {
             cin >> ch; // 다음 문자 받기
             it = char_list.insert(it, ch);
+            if(it == char_list.end())
+                continue;
             it++;
         }
     }
