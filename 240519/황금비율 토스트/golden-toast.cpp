@@ -44,7 +44,7 @@ int main() {
             else
             {
                 it = char_list.erase(it);
-                it--;
+                //it--;
             }
                 
         }
