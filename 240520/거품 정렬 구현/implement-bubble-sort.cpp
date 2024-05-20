@@ -21,7 +21,7 @@ int main() {
         flag = 0;
         for(int i = 0; i < n; i++)
         {
-            if(ary[i] >= ary[i+1])
+            if(ary[i] > ary[i+1])
             {
                 int temp = ary[i];
                 ary[i] = ary[i+1];
