@@ -19,7 +19,7 @@ int main() {
     do // bubble sort 
     {
         flag = 0;
-        for(int i = 0; i < n; i++)
+        for(int i = 0; i < n - 1; i++)
         {
             if(ary[i] > ary[i+1])
             {
