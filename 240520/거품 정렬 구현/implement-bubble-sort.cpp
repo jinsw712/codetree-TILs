@@ -5,7 +5,7 @@ using namespace std;
 int main() {
     // 여기에 코드를 작성해주세요.
     int n;
-    int ary[100];
+    int ary[101];
     int value;
     int flag = 0; // 0 일 경우 sorted, 1일 경우 unsorted
 
