@@ -77,17 +77,17 @@ int searchAry(int m, int n)
         initCheckary();
     }
 
-    for (int i = 0; i < n; i++) // 행에 대한 계산
+    for (int j = 0; j < n; j++) // 열에 대한 계산
     {
-        for (int j = 0; j < n; j++)
+        for (int i = 0; i < n; i++)
         {
             if (checkNUll() == 0)
             {
-                checkAry[ary[j][i]] += 1; // 처음 숫자가 들어올 때
+                checkAry[ary[i][j]] += 1; // 처음 연속될 때
             }
-            else if (checkCount() == ary[j][i]) // 바로 이전의 연속된 숫자와 같을때
+            else if (checkCount() == ary[i][j]) // 바로 이전의 연속된 숫자와 같을때
             {
-                checkAry[ary[j][i]] += 1; // 처음 연속될 때
+                checkAry[ary[i][j]] += 1; // 처음 연속될 때
                 if (searchLucky(m) == 1)
                 {
                     temp++;
@@ -95,15 +95,16 @@ int searchAry(int m, int n)
                     break;
                 }
             }
-            else // 연속되지 않을 때
+            else // 연속되지 않을때
             {
                 initCheckary();
-                checkAry[ary[j][i]] += 1;
+                checkAry[ary[i][j]] += 1;
             }
         }
         initCheckary();
     }
 
+   
     return temp;
 }
 
