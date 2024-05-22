@@ -5,7 +5,7 @@ int ary[100][100];
 
 void initCheckary()
 {
-    for(int i = 0; i < 10; i++)
+    for (int i = 0; i < 10; i++)
     {
         checkAry[i] = 0;
     }
@@ -13,9 +13,9 @@ void initCheckary()
 
 int searchLucky(int m)
 {
-    for(int i = 0; i < 10; i++)
+    for (int i = 0; i < 10; i++)
     {
-        if(checkAry[i] >= m)
+        if (checkAry[i] >= m)
         {
             return 1;
         }
@@ -25,9 +25,9 @@ int searchLucky(int m)
 
 int checkNUll()
 {
-    for(int i = 0; i < 10; i++)
+    for (int i = 0; i < 10; i++)
     {
-        if(checkAry[i] != 0)
+        if (checkAry[i] != 0)
         {
             return 1; // not null
         }
@@ -37,9 +37,9 @@ int checkNUll()
 
 int checkCount()
 {
-    for(int i = 0; i < 10; i++)
+    for (int i = 0; i < 10; i++)
     {
-        if(checkAry[i] != 0)
+        if (checkAry[i] != 0)
         {
             return i;
         }
@@ -50,52 +50,50 @@ int checkCount()
 int searchAry(int m, int n)
 {
     int temp = 0;
-    for(int i = 0; i < n; i++) // 행에 대한 계산
+    for (int i = 0; i < n; i++) // 행에 대한 계산
     {
-        for(int j = 0; j < n; j++)
+        for (int j = 0; j < n; j++)
         {
-            if(checkNUll() == 0)
+            if (checkNUll() == 0)
             {
                 checkAry[ary[i][j]] += 1; // 처음 연속될 때
             }
-            else if(checkCount() == ary[i][j]) // 바로 이전의 연속된 숫자와 같을때
+            else if (checkCount() == ary[i][j]) // 바로 이전의 연속된 숫자와 같을때
             {
                 checkAry[ary[i][j]] += 1; // 처음 연속될 때
-                if(searchLucky(m) == 1)
+                if (searchLucky(m) == 1)
                 {
                     temp++;
                     initCheckary();
                     break;
                 }
-
             }
-            else
+            else // 연속되지 않을때
             {
                 initCheckary();
             }
         }
     }
 
-       for(int i = 0; i < n; i++) // 행에 대한 계산
+    for (int i = 0; i < n; i++) // 행에 대한 계산
     {
-        for(int j = 0; j < n; j++)
+        for (int j = 0; j < n; j++)
         {
-            if(checkNUll() == 0)
+            if (checkNUll() == 0)
             {
-                checkAry[ary[j][i]] += 1; // 처음 연속될 때
+                checkAry[ary[j][i]] += 1; // 처음 숫자가 들어올 때
             }
-            else if(checkCount() == ary[j][i]) // 바로 이전의 연속된 숫자와 같을때
+            else if (checkCount() == ary[j][i]) // 바로 이전의 연속된 숫자와 같을때
             {
                 checkAry[ary[j][i]] += 1; // 처음 연속될 때
-                if(searchLucky(m) == 1)
+                if (searchLucky(m) == 1)
                 {
                     temp++;
                     initCheckary();
                     break;
                 }
-
             }
-            else
+            else // 연속되지 않을 때
             {
                 initCheckary();
             }
@@ -112,15 +110,20 @@ int main() {
     int value;
 
     std::cin >> n >> m;
-    for(int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++)
     {
-        for(int j = 0; j < n; j++)
+        for (int j = 0; j < n; j++)
         {
             std::cin >> value;
             ary[i][j] = value;
         }
     }
-    
-    std::cout << searchAry(m,n);
+
+    if (m == 1)
+    {
+        std::cout << 2 * n;
+        return 0;
+    }
+    std::cout << searchAry(m, n);
     return 0;
 }
