@@ -1,6 +1,6 @@
 #include <iostream>
 
-int checkAry[10];
+int checkAry[101];
 int ary[100][100];
 
 void initCheckary()
