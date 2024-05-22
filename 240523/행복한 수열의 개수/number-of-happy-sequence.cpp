@@ -73,6 +73,7 @@ int searchAry(int m, int n)
                 initCheckary();
             }
         }
+        initCheckary();
     }
 
     for (int i = 0; i < n; i++) // 행에 대한 계산
@@ -98,6 +99,7 @@ int searchAry(int m, int n)
                 initCheckary();
             }
         }
+        initCheckary();
     }
 
     return temp;
