@@ -5,7 +5,7 @@ int ary[100][100];
 
 void initCheckary()
 {
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < 101; i++)
     {
         checkAry[i] = 0;
     }
@@ -13,7 +13,7 @@ void initCheckary()
 
 int searchLucky(int m)
 {
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < 101; i++)
     {
         if (checkAry[i] >= m)
         {
@@ -25,7 +25,7 @@ int searchLucky(int m)
 
 int checkNUll()
 {
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < 101; i++)
     {
         if (checkAry[i] != 0)
         {
@@ -37,7 +37,7 @@ int checkNUll()
 
 int checkCount()
 {
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < 101; i++)
     {
         if (checkAry[i] != 0)
         {
