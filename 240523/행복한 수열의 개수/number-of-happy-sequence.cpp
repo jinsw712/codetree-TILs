@@ -98,7 +98,7 @@ int searchAry(int m, int n)
             else // 연속되지 않을 때
             {
                 initCheckary();
-                checkAry[ary[i][j]] += 1;
+                checkAry[ary[j][i]] += 1;
             }
         }
         initCheckary();
