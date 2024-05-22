@@ -13,13 +13,11 @@ void initCheckary()
 
 int searchLucky(int m)
 {
-    int res = 0;
     for(int i = 0; i < 10; i++)
     {
         if(checkAry[i] >= m)
         {
-            res = 1;
-            return res;
+            return 1;
         }
     }
     return 0;
@@ -65,7 +63,7 @@ int searchAry(int m, int n)
                 checkAry[ary[i][j]] += 1; // 처음 연속될 때
                 if(searchLucky(m) == 1)
                 {
-                    temp += searchLucky(m);
+                    temp++;
                     initCheckary();
                     break;
                 }
@@ -91,7 +89,7 @@ int searchAry(int m, int n)
                 checkAry[ary[j][i]] += 1; // 처음 연속될 때
                 if(searchLucky(m) == 1)
                 {
-                    temp += searchLucky(m);
+                    temp++;
                     initCheckary();
                     break;
                 }
